@@ -1,0 +1,473 @@
+
+<!-- Website developed by Muskan Tripathi | © 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Heartkind Care Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Scroll Animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet" /> -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 48px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color:rgb(250, 4, 172);
+}
+
+.Contact-link {
+  font-weight: 600;
+  padding: 6px 12px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn.solid {
+  background-color:#f90386;
+  color: white;
+  border: none;
+}
+
+.btn.outline {
+  border: 1px solid ;
+  color:rgb(196, 7, 83);
+  background-color: transparent;
+}
+
+.btn.solid:hover {
+  background-color:#c11c66;
+  color:white;
+}
+
+.btn.outline:hover {
+  background-color:#f1d3eb;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ===========================
+   Responsive (Mobile View)
+   =========================== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-button {
+  display: none;
+  font-size: 24px;
+  color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    </style>
+  </head>
+  <body class="bg-gradient-to-r from-[#ffffff] to-[#ffffff] min-h-screen">
+    <header class="navbar">
+      <div class="navbar-left">
+        <img src="/HeartKind_Care_Foundation_Main/assest/Adobe Express - file.png" alt="HeartKind Care Foundation" class="logo" />
+      </div>
+  
+      <div class="hamburger" id="hamburger">&#9776;</div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html">Home ▾</a>
+        <a href="About-Us.html">About Us ▾</a>
+        <a href="what-we-do.html">What We Do ▾</a>
+        <a href="campaign.html">Our Campaign ▾</a>
+        <a href="Gallery.html">Gallery ▾</a>
+        <a href="contact.html" class="Contact-link">Contact Us</a>
+        <a href="Join-Us.html" class="btn outline">Join Us</a>
+        <a href="campaign.html" class="btn solid">Donate</a>
+      </nav>
+
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6">
+      <section class="relative bg-gradient-to-r from-[#FBD6F5] to-[#FEE3EC] rounded-3xl shadow-lg mt-6 md:mt-12 p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start">
+        <div class="flex-1 w-full md:max-w-lg">
+          <h1 class="text-4xl md:text-5xl font-semibold text-black leading-tight mb-4">
+            Together We Rise<br />For A Better Tomorrow
+          </h1>
+          <p class="text-black text-base md:text-lg mb-6 max-w-md">
+            Empowering underprivileged children with access to education, healthcare, and basic needs.
+          </p>
+          <p class="text-black text-base md:text-lg mb-6 max-w-md">
+            Our story began with a single mission — to uplift underprivileged children through education, healthcare, and compassion. Today, we're a growing movement of kindness and change.
+          </p>
+          <button class="bg-[#EC4899] text-white font-semibold rounded-md px-6 py-3 hover:bg-[#DB2777] transition">
+            Support a Child
+          </button>
+        </div>
+         <div class="flex-1 w-full mt-8 md:mt-0 md:ml-12 rounded-3xl overflow-hidden ">   <!--shadow-lg -->
+          <img alt="NGO work" class="w-full h-auto object-cover rounded-3xl" src="/HeartKind_Care_Foundation_Main/assest/Girl Character Thanking For The Donation 3D Illustration .png" />
+        </div>
+<!-- Compact Journey Box -->
+
+<div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-[95%] max-w-3xl bg-white border border-pink-200 rounded-2xl shadow-md px-6 py-4 text-center space-y-3 ">
+    <h2 class="text-xl font-bold text-[#DB2777] tracking-wider">Journey of HeartKind</h2>
+    
+    <div class="flex items-center justify-between text-sm text-gray-700">
+      <div class="flex flex-col items-center space-y-1">
+        <div class="w-2 h-2 bg-[#DB2777] rounded-full"></div>
+        <span class="font-medium">Dec 2023</span>
+        <span class="text-xs text-gray-500">We began 🌱</span>
+      </div>
+      
+      <div class="h-[2px] bg-pink-300 flex-1 mx-2"></div>
+      
+      <div class="flex flex-col items-center space-y-1">
+        <div class="w-2 h-2 bg-[#DB2777] rounded-full"></div>
+        <span class="font-medium">2024</span>
+        <span class="text-xs text-gray-500">Spreading smiles 💖</span>
+      </div>
+  
+      <div class="h-[2px] bg-pink-300 flex-1 mx-2"></div>
+      
+      <div class="flex flex-col items-center space-y-1">
+        <div class="w-2 h-2 bg-[#DB2777] rounded-full animate-pulse"></div>
+        <span class="font-medium">Now</span>
+        <span class="text-xs text-gray-500">Still growing 🕊️</span>
+      </div>
+    </div>
+  
+    <div class="text-xs italic text-gray-600 mt-2">
+      “Helping one person might not change the world, but it could change the world for one person.”
+    </div>
+  </div>
+      </section>  
+  
+     
+     <!-- ourmission, vission and values  -->
+     <section class="mt-10 py-6 px-4 bg-[#ffffff] ">
+        <div class="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl p-4 md:p-6 flex flex-col md:flex-row justify-between items-center divide-y md:divide-y-0 md:divide-x divide-[#e0c5d3] text-[#4a4a3a]">
+      
+          <!-- Mission -->
+          <div class="px-4 py-4 w-full md:w-1/3 text-center hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://cdn-icons-png.flaticon.com/512/1043/1043476.png" alt="Mission" class="w-10 h-10 mx-auto mb-2" />
+            <h3 class="text-base font-semibold mb-1">Our Mission</h3>
+            <p class="text-sm text-[#7a7a7a] leading-snug">To uplift underprivileged children by ensuring access to education, healthcare, and a safe environment.</p>
+          </div>
+      
+          <!-- Vision -->
+          <div class="px-4 py-4 w-full md:w-1/3 text-center hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://cdn-icons-png.flaticon.com/512/3470/3470625.png" alt="Vision" class="w-10 h-10 mx-auto mb-2" />
+            <h3 class="text-base font-semibold mb-1">Our Vision</h3>
+            <p class="text-sm text-[#7a7a7a] leading-snug">A world where every child is nurtured with love, dignity, and equal opportunities to grow and thrive.</p>
+          </div>
+      
+          <!-- Values -->
+          <div class="px-4 py-4 w-full md:w-1/3 text-center hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Values" class="w-10 h-10 mx-auto mb-2" />
+            <h3 class="text-base font-semibold mb-1">Our Values</h3>
+            <p class="text-sm text-[#7a7a7a] leading-snug">Compassion, transparency, and inclusivity—our pillars for making a meaningful, lasting impact.</p>
+          </div>
+      
+        </div>
+      </section>
+      
+    
+      
+<!-- how we are transparet -->
+      <section class="relative bg-white py-10 px-6 md:px-12 pt-12">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-[Playfair Display] font-bold text-[#DB2777] mb-6">
+            How We Stay Transparent
+          </h2>
+          <p class="text-gray-700 max-w-2xl mx-auto text-base md:text-lg mb-12 font-[Lato]">
+            Every donation counts — and we make sure you see exactly how. From photo updates, video calls with volunteers, to GPS-tracked campaign locations — transparency is at the heart of Heartkind Care Foundation.
+          </p>
+      
+          <!-- Features -->
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Photo Proof -->
+            <div class="bg-[#fef7fd] rounded-3xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-pink-200 transition">
+              <img src="https://img.icons8.com/color/96/camera--v1.png" alt="Photo Proof" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-semibold text-[#DB2777] mb-2">Photo Proofs</h3>
+              <p class="text-gray-600 text-sm">
+                We upload real-time photos of every donation's impact — every child, every smile.
+              </p>
+            </div>
+      
+            <!-- Video Call -->
+            <div class="bg-[#fef7fd] rounded-3xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-pink-200 transition">
+              <img src="https://img.icons8.com/color/96/video-call.png" alt="Video Call" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-semibold text-[#DB2777] mb-2">Live Video Calls</h3>
+              <p class="text-gray-600 text-sm">
+                Want to talk directly with our team or volunteers? Schedule a live video call anytime.
+              </p>
+            </div>
+      
+            <!-- GPS Tracking -->
+            <div class="bg-[#fef7fd] rounded-3xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-pink-200 transition">
+              <img src="https://img.icons8.com/color/96/marker--v1.png" alt="GPS Location" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-semibold text-[#DB2777] mb-2">GPS Location</h3>
+              <p class="text-gray-600 text-sm">
+                Get real-time GPS locations of where your donations are being used, with map access.
+              </p>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Programs -->
+      <section class="mt-16 mb-16">
+        <h2 class="text-3xl font-semibold text-center text-[#7e0a3e] mb-12">Our Programs</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <img src="https://example.com/education-program.jpg" alt="Education Program" class="w-full h-48 object-cover"/>
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-[#DB2777] mb-2">Education</h3>
+              <p class="text-gray-700 text-sm">
+                Providing quality education and learning resources for children in need.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <img src="https://example.com/healthcare-program.jpg" alt="Healthcare Program" class="w-full h-48 object-cover"/>
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-[#DB2777] mb-2">Healthcare</h3>
+              <p class="text-gray-700 text-sm">
+                Facilitating access to essential healthcare services and nutritional support.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <img src="https://example.com/community-program.jpg" alt="Community Program" class="w-full h-48 object-cover"/>
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-[#DB2777] mb-2">Community Development</h3>
+              <p class="text-gray-700 text-sm">
+                Strengthening communities through livelihood initiatives and awareness programs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
+ <!-- Meet Our Team -->
+ <section class="mb-12 text-center max-w-6xl mx-auto px-4">
+  <h2 class="text-2xl md:text-3xl font-semibold text-[#DB2777] mb-4">Meet Our Team</h2>
+  <p class="text-gray-700 text-sm md:text-base mb-10">Dedicated hearts behind Heartkind Care Foundation</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    
+    <!-- Member 1 -->
+    <div class="bg-transparent shadow-none flex flex-col items-center">
+      <img alt="" class="w-32 h-32 object-cover rounded-full mb-4" src="/HeartKind_Care_Foundation_Main/assest/founder.jpg" />
+      <div class="text-center">
+        <h3 class="font-semibold text-lg text-black mb-1">Mr. Ravi Singh</h3>
+        <p class="text-gray-600 text-sm">FOUNDER</p>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="bg-transparent shadow-none flex flex-col items-center">
+      <img alt="" class="w-32 h-32 object-cover rounded-full mb-4" src="/HeartKind_Care_Foundation_Main/assest/cofounder.jpg" />
+      <div class="text-center">
+        <h3 class="font-semibold text-lg text-black mb-1">Mr. Anshuman Singh</h3>
+        <p class="text-gray-600 text-sm">CO-FOUNDERR</p>
+      </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="bg-transparent shadow-none flex flex-col items-center">
+      <img alt="" class="w-32 h-32 object-cover rounded-full mb-4" src="/HeartKind_Care_Foundation_Main/assest/director.jpg" />
+      <div class="text-center">
+        <h3 class="font-semibold text-lg text-black mb-1">Mr. Aryan Singh</h3>
+        <p class="text-gray-600 text-sm">DIRECTOR</p>
+      </div>
+    </div>
+ <!-- Member 4 -->
+ <!-- <div class="bg-transparent shadow-none flex flex-col items-center">
+  <img alt="Riya Sharma" class="w-32 h-32 object-cover rounded-full mb-4" src="/HeartKind_Care_Foundation_Main/assest/field operation manager.jpg" />
+  <div class="text-center">
+    <h3 class="font-semibold text-lg text-black mb-1">Mr. Ankit Singh</h3>
+    <p class="text-gray-600 text-sm">FIELD OPERATIONS MANAGER</p>
+  </div>
+</div> -->
+ <!-- Member 5 -->
+ <!-- <div class="bg-transparent shadow-none flex flex-col items-center">
+  <img alt="Riya Sharma" class="w-32 h-32 object-cover rounded-full mb-4" src="/HeartKind_Care_Foundation_Main/assest/resource manager.jpg" />
+  <div class="text-center">
+    <h3 class="font-semibold text-lg text-black mb-1">Mr. Ganesh Singh</h3>
+    <p class="text-gray-600 text-sm"> RESOURCE COORDINATOR</p>
+  </div>
+</div>
+  </div> -->
+</section>
+
+  <!-- ❤️ Testimonials / Stories of Change -->
+<section class="my-24 px-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-semibold text-center text-black mb-6">Stories of Change</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Real stories from real lives we’ve touched. Witness how kindness creates ripples of transformation.</p>
+    <div class="grid gap-8 md:grid-cols-3 sm:grid-cols-2">
+      <div class="bg-white/70 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-pink-100 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <p class="text-gray-800 italic mb-4">“Supporting Heartkind has been the most fulfilling part of my life. I know my donations are making a difference.”</p>
+        <div class="flex items-center space-x-4">
+          <img class="w-12 h-12 rounded-full object-cover" src="/HeartKind_Care_Foundation_Main/assest/gricery.webp" alt="Child 1" />
+          <div>
+            <h4 class="font-semibold text-black">Ananya</h4>
+            <p class="text-sm text-gray-600">Donor</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white/70 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-pink-100 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <p class="text-gray-800 italic mb-4">“Volunteering here changed my perspective on life and privilege.”</p>
+        <div class="flex items-center space-x-4">
+          <img class="w-12 h-12 rounded-full object-cover" src="/HeartKind_Care_Foundation_Main/assest/education.jpg" alt="Volunteer" />
+          <div>
+            <h4 class="font-semibold text-black">Rahul Verma</h4>
+            <p class="text-sm text-gray-600">Volunteer</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white/70 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-pink-100 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+        <p class="text-gray-800 italic mb-4">“Our community now has access to clean water for the first time.”</p>
+        <div class="flex items-center space-x-4">
+          <img class="w-12 h-12 rounded-full object-cover" src="/HeartKind_Care_Foundation_Main/assest/birthday party.jpg" alt="Beneficiary" />
+          <div>
+            <h4 class="font-semibold text-black">Meena Devi</h4>
+            <p class="text-sm text-gray-600"> Beneficiary</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 📍 Call to Action (CTA) -->
+  <section class="relative my-28 px-6 max-w-6xl mx-auto text-center bg-gradient-to-r from-[#FFE4EC] to-[#FFF5F9] rounded-[2rem] shadow-2xl py-16 overflow-hidden">
+    <!-- Floating hearts -->
+    <div class="absolute animate-pulse w-8 h-8 bg-pink-300 rounded-full opacity-50 top-6 left-6"></div>
+    <div class="absolute animate-bounce w-6 h-6 bg-pink-400 rounded-full opacity-40 top-10 right-8"></div>
+    <div class="absolute animate-bounce w-5 h-5 bg-pink-200 rounded-full opacity-30 bottom-6 left-10"></div>
+  
+    <h2 class="text-4xl md:text-5xl font-bold text-[#C026D3] drop-shadow mb-4">Join Hands With Us</h2>
+    <p class="text-gray-700 text-lg max-w-2xl mx-auto mb-8">
+      Whether it's time, donations, or love — your contribution can change lives. Be a part of something beautiful.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <button class="bg-[#EC4899] text-white font-bold px-8 py-4 rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-pink-300">
+        Donate Now
+      </button>
+      <button class="border-2 border-[#EC4899] text-[#EC4899] font-bold px-8 py-4 rounded-full hover:bg-[#EC4899] hover:text-white transition">
+        Become a Volunteer
+      </button>
+    </div>
+  </section>
+  </section>
+</main>
+  <div id="footer"></div>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+
+        AOS.init({ duration: 800, once: true });
+
+
+        fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+   
+  </body>
+</html>

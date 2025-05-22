@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HeartKind Care Foundation - Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="donation.css">
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-sans">
+
+
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="/HeartKind_Care_Foundation_Main/assest/Adobe Express - file.png" alt="HeartKind Care Foundation"
+        class="logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="home.html">Home ▾</a>
+      <a href="About-Us.html">About Us ▾</a>
+      <a href="what-we-do.html">What We Do ▾</a>
+      <a href="campaign.html">Our Campaign ▾</a>
+      <a href="Gallery.html">Gallery ▾</a>
+      <a href="contact.html" class="Contact-link">Contact Us</a>
+      <a href="Join-Us.html" class="btn outline">Join Us</a>
+      <a href="campaign.html" class="btn solid">Donate</a>
+    </nav>
+    <!-- Toggle Cart Button (visible on mobile only)
+<button id="toggleCartBtn" class="lg:hidden fixed top-4 right-4 z-50 bg-pink-500 text-white px-4 py-2 rounded-full shadow-md">
+  🛒 Cart
+</button> -->
+
+  </header>
+
+  <!-- Top Image (Smaller Height) -->
+  <div class="w-full">
+    <img alt="Children in need celebrating with love" class="w-full object-cover max-h-[300px]"
+      src="https://storage.googleapis.com/a1aa/image/4ec6aabd-1359-4561-0d78-9cc7721a6a65.jpg" />
+  </div>
+
+  <!-- Main Container -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
+    <div class="bg-white shadow-xl rounded-lg p-6 sm:p-8 border border-pink-200">
+
+      <!-- Heading -->
+      <h1 class="text-2xl sm:text-3xl font-bold text-green-600 mb-2">
+        🌱 Donate a Plant and Grow Hope </h1>
+      <p class="text-sm sm:text-base text-gray-700 mb-4">
+        By donating a plant, you’re not only contributing to the environment, but you’re also helping a child feel the
+        joy of nurturing life. Your contribution will help spread hope and positivity to those in need.</p>
+
+      <!-- Tax Benefits Badge -->
+      <div
+        class="mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-full text-sm w-max shadow-md transition">
+        <h2 class="text-white">Tax Benefits</h2>
+      </div>
+
+      <!-- Target and Time Remaining -->
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800 text-base sm:text-lg font-semibold">
+        <div class="flex items-center space-x-2">
+          <span class="text-pink-600">🎯 Target:</span> <span>₹600,000</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="text-pink-600">⏳ Time Remaining:</span> <span>50 days only</span>
+        </div>
+      </div>
+
+      <!-- Social Buttons -->
+      <div class="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-3 text-sm text-green-600">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://heartkindcare.org/celebrate" target="_blank"
+          class="flex items-center gap-2 hover:text-pink-800 transition">
+          <i class="fab fa-facebook-f"></i>
+          <span>Share on Facebook</span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/?url=https://heartkindcare.org/celebrate" target="_blank"
+          class="flex items-center gap-2 hover:text-pink-800 transition">
+          <i class="fab fa-instagram"></i>
+          <span>Share on Instagram</span>
+        </a>
+
+        <!-- Copy Link -->
+        <button onclick="copyLink()" class="flex items-center gap-2 hover:text-pink-800 transition">
+          <i class="fas fa-link"></i>
+          <span>Copy Link</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col lg:flex-row lg:items-start gap-6 p-6">
+    <!-- Products Grid -->
+    <section class="w-full lg:w-3/4">
+      <h2 class="text-xl font-bold mb-6">Products</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Product Template (repeat with different info) -->
+        <div
+          class="product border border-gray-200 rounded-md p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300"
+          data-product-id="1">
+          <img alt="Nutritious food packet" class="rounded-md mb-4 object-cover w-full h-44"
+            src="https://storage.googleapis.com/a1aa/image/food-packet-family.jpg" />
+          <h3 class="font-semibold text-gray-900 mb-1">Donate a Plant and Nurture Hope</h3>
+          <p class="text-sm text-pink-600 font-semibold mb-2">Price: ₹<span class="unit-price">55</span>/ Plant</p>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-2">
+              <button class="decrement bg-pink-200 px-2 rounded text-pink-800 font-bold">−</button>
+              <span class="quantity font-semibold">1</span>
+              <button class="increment bg-pink-200 px-2 rounded text-pink-800 font-bold">+</button>
+            </div>
+            <div class="text-sm font-semibold text-gray-800">
+              Total: ₹<span class="total">55</span>
+            </div>
+          </div>
+          <button
+            class="add-to-cart mt-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 rounded-md text-sm flex items-center justify-center gap-2">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <!-- Example: Add More Products -->
+        <!-- <div
+          class="product border border-gray-200 rounded-md p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300"
+          data-product-id="2">
+          <img alt="Education Kit" class="rounded-md mb-4 object-cover w-full h-44"
+            src="https://storage.googleapis.com/a1aa/image/education-kit.jpg" />
+          <h3 class="font-semibold text-gray-900 mb-1">Sponsor a Cake</h3>
+          <p class="text-sm text-pink-600 font-semibold mb-2">Price: ₹<span class="unit-price">550</span>/ 20 Child</p>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-2">
+              <button class="decrement bg-pink-200 px-2 rounded text-pink-800 font-bold">−</button>
+              <span class="quantity font-semibold">1</span>
+              <button class="increment bg-pink-200 px-2 rounded text-pink-800 font-bold">+</button>
+            </div>
+            <div class="text-sm font-semibold text-gray-800">
+              Total: ₹<span class="total">100</span>
+            </div>
+          </div>
+          <button
+            class="add-to-cart mt-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 rounded-md text-sm flex items-center justify-center gap-2">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div> -->
+
+        <!-- Add more products with unique `data-product-id` -->
+        <!-- <div
+          class="product border border-gray-200 rounded-md p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300"
+          data-product-id="3">
+          <img alt="Education Kit" class="rounded-md mb-4 object-cover w-full h-44"
+            src="https://storage.googleapis.com/a1aa/image/education-kit.jpg" />
+          <h3 class="font-semibold text-gray-900 mb-1">Birthday Party Celebration</h3>
+          <p class="text-sm text-pink-600 font-semibold mb-2">Price: ₹<span class="unit-price">1500</span>/ 20 Child</p>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-2">
+              <button class="decrement bg-pink-200 px-2 rounded text-pink-800 font-bold">−</button>
+              <span class="quantity font-semibold">1</span>
+              <button class="increment bg-pink-200 px-2 rounded text-pink-800 font-bold">+</button>
+            </div>
+            <div class="text-sm font-semibold text-gray-800">
+              Total: ₹<span class="total">100</span>
+            </div>
+          </div>
+          <button
+            class="add-to-cart mt-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 rounded-md text-sm flex items-center justify-center gap-2">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div> -->
+
+        <!-- <div
+          class="product border border-gray-200 rounded-md p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300"
+          data-product-id="4">
+          <img alt="Education Kit" class="rounded-md mb-4 object-cover w-full h-44"
+            src="https://storage.googleapis.com/a1aa/image/education-kit.jpg" />
+          <h3 class="font-semibold text-gray-900 mb-1">Sponsor Grand Celebration</h3>
+          <p class="text-sm text-pink-600 font-semibold mb-2">Price: ₹<span class="unit-price">4500</span>/ 50 Child</p>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-2">
+              <button class="decrement bg-pink-200 px-2 rounded text-pink-800 font-bold">−</button>
+              <span class="quantity font-semibold">1</span>
+              <button class="increment bg-pink-200 px-2 rounded text-pink-800 font-bold">+</button>
+            </div>
+            <div class="text-sm font-semibold text-gray-800">
+              Total: ₹<span class="total">100</span>
+            </div>
+          </div>
+          <button
+            class="add-to-cart mt-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 rounded-md text-sm flex items-center justify-center gap-2">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div> -->
+
+        <!-- <div
+          class="product border border-gray-200 rounded-md p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300"
+          data-product-id="5">
+          <img alt="Education Kit" class="rounded-md mb-4 object-cover w-full h-44"
+            src="https://storage.googleapis.com/a1aa/image/education-kit.jpg" />
+          <h3 class="font-semibold text-gray-900 mb-1">Mini Party Celebration</h3>
+          <p class="text-sm text-pink-600 font-semibold mb-2">Price: ₹<span class="unit-price">2000</span>/ 20 Child</p>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center space-x-2">
+              <button class="decrement bg-pink-200 px-2 rounded text-pink-800 font-bold">−</button>
+              <span class="quantity font-semibold">1</span>
+              <button class="increment bg-pink-200 px-2 rounded text-pink-800 font-bold">+</button>
+            </div>
+            <div class="text-sm font-semibold text-gray-800">
+              Total: ₹<span class="total">100</span>
+            </div>
+          </div>
+          <button
+            class="add-to-cart mt-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 rounded-md text-sm flex items-center justify-center gap-2">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div> -->
+
+      </div>
+
+
+
+    </section>
+
+
+    <!-- Cart Summary Side Box -->
+    <aside
+      class="w-full lg:w-1/4 sticky top-[80px] max-h-[calc(100vh-100px)] overflow-auto bg-white shadow-lg border border-pink-200 rounded-2xl p-6 transition-all duration-300">
+      <h2 class="text-2xl font-bold text-pink-600 mb-4 flex items-center gap-2">
+        🛒 My Cart
+      </h2>
+
+      <div id="cart-items" class="space-y-3 text-sm text-gray-700">
+        <p class="text-gray-500">No items in the cart.</p>
+      </div>
+
+      <div class="mt-6 text-lg font-semibold text-gray-800 border-t pt-4">
+        Total: <span class="text-pink-600 font-bold">₹<span id="cart-total">0</span></span>
+      </div>
+
+      <button id="go-to-summary"
+        class="w-full mt-5 bg-pink-500 hover:bg-pink-600 text-white font-medium py-2.5 rounded-xl shadow-md transition duration-300 ease-in-out">
+        Checkout My Cart
+      </button>
+    </aside>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="bg-gradient-to-r from-white to-rose-40 p-12 rounded-3xl shadow-2xl">
+    <div class="container mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">What We Provide: Bringing Smiles to Children in Need</h2>
+        <p class="text-lg text-gray-600 mb-6">Join us in spreading joy and love to underprivileged children. Your
+          celebration can be their moment of happiness. Let’s make it memorable together!</p>
+        <p class="text-2xl text-pink-600 font-semibold">Make Your Celebration Special by Giving Back to Children</p>
+      </div>
+
+      <!-- Product Packages -->
+      <div class="flex flex-col bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 transform">
+  <h5 class="text-2xl font-semibold text-gray-800 mb-4">1. Donate a Plant and Grow Hope</h5>
+  <p class="text-gray-600 mb-4">By donating plants, you’re helping nurture both the environment and the lives of families in need. Each plant donation brings a sense of hope, love, and nature into homes, fostering growth and wellbeing for all.</p>
+
+  <div class="font-semibold text-pink-600 mb-2">What’s Included:</div>
+  <ul class="list-disc pl-5 text-sm text-gray-600">
+    <li>A plant delivered to a family in need</li>
+    <li>A personalized thank-you note</li>
+    <li>Care instructions to ensure the plant grows healthy and strong</li>
+    <li>A reminder of how your kindness is growing hope in someone’s life</li>
+  </ul>
+
+  <div class="font-semibold text-pink-600 mt-4 mb-2">Project Objectives:</div>
+  <ul class="list-disc pl-5 text-sm text-gray-600">
+    <li>Plant 1,00,000 new trees in the target area to restore green spaces and improve the environment.</li>
+    <li>Provide photogenic proof of your donation, ensuring that every donor sees the impact of their contribution.</li>
+    <li>Contribute to climate change mitigation efforts by reducing carbon emissions and promoting environmental sustainability.</li>
+    <li>Support local communities and economies by creating jobs in planting, maintaining, and nurturing the trees, stimulating economic growth.</li>
+  </ul>
+</div>
+
+
+
+      
+       
+
+    </div>
+  </div>
+
+  <!-- fAQ sectiona -->
+  <section
+    class="relative mt-16 bg-white/60 backdrop-blur-md border border-pink-200 shadow-xl rounded-xl p-8 max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-pink-700 text-center mb-4">💬 FAQs – We’re here to help!</h2>
+    <p class="text-center text-gray-600 mb-8 text-base">Answers to some of the most heartfelt questions from our
+      wonderful donors 💖</p>
+
+    <div class="space-y-4">
+      <!-- FAQ Card -->
+      <div class="group rounded-lg border border-pink-300 p-4 transition-all duration-300 hover:shadow-md">
+        <button
+          class="w-full flex justify-between items-center text-left text-pink-800 font-semibold text-lg faq-toggle focus:outline-none">
+          <span>📍 Where are the donations distributed?</span>
+          <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-answer hidden mt-2 text-sm text-gray-700 leading-relaxed">
+          Currently, your generous donations are helping underprivileged children in <strong>Varanasi, India</strong>.
+          🌍
+        </div>
+      </div>
+
+      <div class="group rounded-lg border border-pink-300 p-4 transition-all duration-300 hover:shadow-md">
+        <button
+          class="w-full flex justify-between items-center text-left text-pink-800 font-semibold text-lg faq-toggle focus:outline-none">
+          <span>📸 When will I receive pictures?</span>
+          <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-answer hidden mt-2 text-sm text-gray-700 leading-relaxed">
+          You’ll receive beautiful photos of your donation and celebration 📷 on your selected delivery date via
+          WhatsApp or email!
+        </div>
+      </div>
+
+      <div class="group rounded-lg border border-pink-300 p-4 transition-all duration-300 hover:shadow-md">
+        <button
+          class="w-full flex justify-between items-center text-left text-pink-800 font-semibold text-lg faq-toggle focus:outline-none">
+          <span>🎂 What size is the cake?</span>
+          <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-answer hidden mt-2 text-sm text-gray-700 leading-relaxed">
+          🧁 For Food Packets & Cake: 1kg <br />
+          🎉 For Grand Party Celebration: 3kg of joy-filled cake!
+        </div>
+      </div>
+
+      <div class="group rounded-lg border border-pink-300 p-4 transition-all duration-300 hover:shadow-md">
+        <button
+          class="w-full flex justify-between items-center text-left text-pink-800 font-semibold text-lg faq-toggle focus:outline-none">
+          <span>✏️ Can I change my donation details?</span>
+          <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="faq-answer hidden mt-2 text-sm text-gray-700 leading-relaxed">
+          Absolutely! You can update your donation details by clicking on <strong>"Track Donation"</strong> in the chat
+          💬 on WhatsApp: <a href="https://wa.me/917521050908" class="text-pink-600 underline">+91 7521050908</a>. You
+          may update up to 3 times before <strong>8 AM the next day</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- last section -->
+  <section class="mt-16 mb-10 bg-[#fef1f5] py-14 px-4 rounded-2xl max-w-7xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#a8325f] mb-4">
+      We Ensure 100% Transparency With Your Contribution
+    </h2>
+    <p class="text-sm md:text-base text-[#d46a92] max-w-xl mx-auto mb-10">
+      Every donation you make is documented and shared—because your kindness deserves proof and gratitude.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-10">
+      <!-- Polaroid 1 -->
+      <div
+        class="bg-white p-4 shadow-xl rounded-md transform rotate-[-5deg] hover:rotate-0 transition-transform duration-300 max-w-[220px]">
+        <img src="https://yourdomain.com/photo1.jpg" alt="Photographic Proof"
+          class="rounded-md object-cover w-full h-[180px]" />
+        <p class="mt-3 font-medium text-[#a8325f]">Photographic Proof</p>
+      </div>
+
+      <!-- Polaroid 2 -->
+      <div
+        class="bg-white p-4 shadow-xl rounded-md transform rotate-[6deg] hover:rotate-0 transition-transform duration-300 max-w-[220px]">
+        <img src="https://yourdomain.com/photo2.jpg" alt="Sponsor's Name"
+          class="rounded-md object-cover w-full h-[180px]" />
+        <p class="mt-3 font-medium text-[#a8325f]">Sponsor's Name</p>
+      </div>
+
+      <!-- Optional: Polaroid 3 -->
+      <div
+        class="bg-white p-4 shadow-xl rounded-md transform rotate-[-3deg] hover:rotate-0 transition-transform duration-300 max-w-[220px]">
+        <img src="https://yourdomain.com/photo3.jpg" alt="Meal Served"
+          class="rounded-md object-cover w-full h-[180px]" />
+        <p class="mt-3 font-medium text-[#a8325f]">Meal Served with Love</p>
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+
+  <div id="footer"></div>
+
+
+  <!-- Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // FAQ toggle
+      document.querySelectorAll('.faq-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+          const answer = button.nextElementSibling;
+          const icon = button.querySelector('svg');
+          answer.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        });
+      });
+
+      // Hamburger menu toggle
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+
+      // Copy link function
+      window.copyLink = function () {
+        const copyText = window.location.href;
+        navigator.clipboard.writeText(copyText)
+          .then(() => alert('Link copied to clipboard!'))
+          .catch(err => console.log('Error copying link: ', err));
+      };
+
+      // Cart logic
+      const cart = {};
+      const cartItems = document.getElementById("cart-items");
+      const cartTotal = document.getElementById("cart-total");
+
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function () {
+          const product = button.closest('.product');
+          const id = product.dataset.productId;
+          const name = product.querySelector('h3').textContent;
+          const price = parseInt(product.querySelector('.unit-price').textContent);
+          const quantity = parseInt(product.querySelector('.quantity').textContent);
+          cart[id] = { name, price, quantity };
+          updateCartDisplay();
+        });
+      });
+
+      document.querySelectorAll('.increment').forEach(button => {
+        button.addEventListener('click', function () {
+          const product = button.closest('.product');
+          const productId = product.dataset.productId;
+          const quantityEl = product.querySelector('.quantity');
+          let quantity = parseInt(quantityEl.textContent);
+          quantity++;
+          quantityEl.textContent = quantity;
+          const unitPrice = parseInt(product.querySelector('.unit-price').textContent);
+          product.querySelector('.total').textContent = unitPrice * quantity;
+          if (cart[productId]) {
+            cart[productId].quantity = quantity;
+            updateCartDisplay();
+          }
+        });
+      });
+
+      document.querySelectorAll('.decrement').forEach(button => {
+        button.addEventListener('click', function () {
+          const product = button.closest('.product');
+          const productId = product.dataset.productId;
+          const quantityEl = product.querySelector('.quantity');
+          let quantity = parseInt(quantityEl.textContent);
+          if (quantity > 1) {
+            quantity--;
+            quantityEl.textContent = quantity;
+            const unitPrice = parseInt(product.querySelector('.unit-price').textContent);
+            product.querySelector('.total').textContent = unitPrice * quantity;
+            if (cart[productId]) {
+              cart[productId].quantity = quantity;
+              updateCartDisplay();
+            }
+          }
+        });
+      });
+
+      function addRemoveButton(id) {
+        const removeBtn = document.createElement("button");
+        removeBtn.className = "text-red-500 hover:underline ml-2";
+        removeBtn.textContent = "Remove";
+        removeBtn.addEventListener("click", () => {
+          delete cart[id];
+          updateCartDisplay();
+        });
+        return removeBtn;
+      }
+
+      function updateCartDisplay() {
+        cartItems.innerHTML = '';
+        let total = 0;
+        Object.keys(cart).forEach(id => {
+          const item = cart[id];
+          total += item.price * item.quantity;
+          const itemWrapper = document.createElement('div');
+          itemWrapper.className = "flex justify-between items-center";
+          const itemText = document.createElement('span');
+          itemText.textContent = `${item.name} × ${item.quantity} = ₹${item.price * item.quantity}`;
+          itemWrapper.appendChild(itemText);
+          itemWrapper.appendChild(addRemoveButton(id));
+          cartItems.appendChild(itemWrapper);
+        });
+        if (total === 0) {
+          cartItems.innerHTML = '<p class="text-gray-600">No items in the cart.</p>';
+        }
+        cartTotal.textContent = total;
+      }
+
+      // Checkout Button
+      document.getElementById("go-to-summary").addEventListener("click", function () {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = "total-summary.html";
+      });
+
+      // Footer loading
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer").innerHTML = data;
+        });
+
+      // Modal handling (if this part is also on same page)
+      const modal = document.getElementById("checkout-modal");
+      const closeModal = document.getElementById("close-modal");
+      const summaryTotal = document.getElementById("summary-total");
+      const summaryTax = document.getElementById("summary-tax");
+      const summaryFinal = document.getElementById("summary-final");
+
+      if (closeModal) {
+        closeModal.addEventListener("click", () => {
+          modal.classList.add("hidden");
+        });
+      }
+
+      const checkoutForm = document.getElementById("checkout-form");
+      if (checkoutForm) {
+        checkoutForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your support! We’ve received your donation.");
+          modal.classList.add("hidden");
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

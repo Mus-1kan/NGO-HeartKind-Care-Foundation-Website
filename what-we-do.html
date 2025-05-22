@@ -1,0 +1,528 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>whatWeDo-HeartKind Care Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+          .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 48px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color:rgb(250, 4, 172);
+}
+
+.Contact-link {
+  font-weight: 600;
+  padding: 6px 12px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn.solid {
+  background-color:#f90386;
+  color: white;
+  border: none;
+}
+
+.btn.outline {
+  border: 1px solid ;
+  color:rgb(196, 7, 83);
+  background-color: transparent;
+}
+
+.btn.solid:hover {
+  background-color:#c11c66;
+  color:white;
+}
+
+.btn.outline:hover {
+  background-color:#f1d3eb;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ===========================
+   Responsive (Mobile View)
+   =========================== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-button {
+  display: none;
+  font-size: 24px;
+  color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body class="bg-[#F9FAFB] text-[#111827]">
+    <header class="navbar">
+      <div class="navbar-left">
+        <img src="/HeartKind_Care_Foundation_Main/assest/Adobe Express - file.png" alt="HeartKind Care Foundation" class="logo" />
+      </div>
+  
+      <div class="hamburger" id="hamburger">&#9776;</div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html">Home ▾</a>
+        <a href="About-Us.html">About Us ▾</a>
+        <a href="what-we-do.html">What We Do ▾</a>
+        <a href="campaign.html">Our Campaign ▾</a>
+        <a href="Gallery.html">Gallery ▾</a>
+        <a href="contact.html" class="Contact-link">Contact Us</a>
+        <a href="Join-Us.html" class="btn outline">Join Us</a>
+        <a href="campaign.html" class="btn solid">Donate</a>
+      </nav>
+
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20"> <!-- Hero Section -->
+               
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="md:col-span-1">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-[#4E3B31] leading-tight max-w-3xl">
+                    What We Do: Empowering Underprivileged Children
+                </h1>
+                <div class="mt-6 flex space-x-6 text-gray-500 text-sm font-semibold">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-[#F9B4D2] text-white flex items-center justify-center font-bold">
+                            1 </div> <span>Years of Impact</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-[#70193d] text-white flex items-center justify-center font-bold">
+                            15 </div> <span>Successful Campaigns</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-[#FFB3D1] text-white flex items-center justify-center font-bold">
+                            28 </div> <span>Dedicated Team Members</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative md:col-span-1">
+                <img src="/HeartKind_Care_Foundation_Main/assest/IMG-20241112-WA0025.jpg"
+                    alt="Empowering Underprivileged Children"
+                    class="rounded-lg shadow-lg w-full object-cover" />
+                <div class="absolute top-4 right-4 bg-[#FF6F61] text-white text-xs font-semibold px-3 py-1 rounded-full cursor-pointer select-none">
+                    New
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- We Build Best Service Experience Section --> 
+        <section class="mt-16 bg-[#872657] rounded-2xl p-8 text-[#ffffff] max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
+              <!-- Left Content -->
+              <div class="md:w-1/3">
+                <h2 class="text-3xl font-bold mb-2 text-[#ffffff]">We Empower With Compassion</h2>
+                <p class="text-[#fffff] text-sm leading-relaxed">
+                  At Heartkind Care Foundation, we provide essential support in education, nutrition, healthcare, and emotional well-being for underprivileged children. Our mission is rooted in love, hope, and opportunity.
+                </p>
+              </div>
+          
+              <!-- Right Cards -->
+              <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Education -->
+                <div class="bg-[#B3005D] rounded-lg p-6 flex flex-col justify-between shadow-sm">
+                  <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-[#f8bbd0] text-black flex items-center justify-center font-bold">1</div>
+                    <h3 class="font-semibold text-lg text-[#fffff]">Education</h3>
+                  </div>
+                  <p class="text-[#fffff] text-sm leading-relaxed">
+                    We ensure children receive quality education and the tools they need to learn, grow, and thrive.
+                  </p>
+                </div>
+          
+                <!-- Healthcare -->
+                <div class="bg-[#FF69B4] rounded-lg p-6 flex flex-col justify-between text-[#4b1c2e] shadow-sm">
+                  <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-white text-[#e91e63] flex items-center justify-center font-bold">2</div>
+                    <h3 class="font-semibold text-lg text-[#4B0031]">Healthcare</h3>
+                  </div>
+                  <p class="text-sm leading-relaxed">
+                    From regular checkups to emergency aid, we safeguard every child’s health through compassionate care.
+                  </p>
+                </div>
+          
+                <!-- Daily Essentials -->
+                <div class="bg-[#B3005D] rounded-lg p-6 flex flex-col justify-between shadow-sm">
+                  <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-[#f8bbd0] text-black flex items-center justify-center font-bold">3</div>
+                    <h3 class="font-semibold text-lg text-[#fffff]">Daily Essentials</h3>
+                  </div>
+                  <p class="text-[#fffff] text-sm leading-relaxed">
+                    We distribute nutritious food, clothes, and hygiene kits to ensure every child lives with dignity.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="mt-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+            <div class="relative">
+                <img
+                    src="/HeartKind_Care_Foundation_Main/assest/IMG-20241112-WA0001.jpg"
+                    alt="Our Field Team at Work"
+                    class="rounded-lg shadow-lg w-full object-cover"
+                />
+                <div class="absolute top-2 left-2 bg-[#FAD0C9] text-[#4E3B31] text-xs font-semibold px-2 py-1 rounded"> 150+
+                    Children Empowered
+                </div>
+            </div>
+            <div class="col-span-2">
+                <h2 class="text-2xl font-bold text-[#4E3B31] mb-4">Why Heartkind Care Foundation?</h2>
+                <p class="text-[#6B7280] text-base leading-relaxed max-w-xl">At Heartkind Care Foundation, we focus on
+                    providing long-term solutions to underprivileged children. Through dedicated campaigns in education,
+                    healthcare, and community support, we ensure a brighter future for every child we reach.</p>
+            </div>
+        </section>
+        
+
+         <!-- Why You Should Choose Section -->
+        <section class="mt-20 max-w-4xl mx-auto text-center">
+            <h3 class="text-lg font-semibold text-[#6B7280] uppercase tracking-widest mb-2"> How Do We Work? </h3>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Planning Step -->
+                <div class="bg-[#872657] rounded-lg p-6 text-left text-[#ffffff]">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-[#FF69B4] text-white flex items-center justify-center font-bold">01</div>
+                        <h4 class="font-semibold text-lg">Planning</h4>
+                    </div>
+                    <p class="text-gray-200 text-sm leading-relaxed">We carefully plan each step to ensure that we provide sustainable and impactful solutions to the children and communities we support.</p>
+                </div>
+                
+                <!-- Image or Video Section -->
+                <div class="relative rounded-lg overflow-hidden">
+                    <img
+                        src="https://heartkindcarefoundation.com/wp-content/uploads/2024/07/IMG-20240124-WA0034.jpg"
+                        alt="Our Field Team at Work"
+                        class="w-full h-full object-cover"
+                    />
+                    <button aria-label="Play video" class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-[#FF69B4] bg-opacity-90 rounded-full flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-play text-white text-2xl ml-1"></i>
+                        </div>
+                    </button>
+                </div>
+        
+                <!-- Execution Step -->
+                <div class="bg-[#872657] rounded-lg p-6 text-left text-[#ffffff]">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-[#FF69B4] text-white flex items-center justify-center font-bold">03</div>
+                        <h4 class="font-semibold text-lg">Execution</h4>
+                    </div>
+                    <p class="text-gray-200 text-sm leading-relaxed">We execute our plans with care, adapting to challenges and ensuring that every child gets the support they need.</p>
+                </div>
+        
+                <!-- Delivery Step -->
+                <div class="bg-[#872657] rounded-lg p-6 text-left text-[#ffffff]">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-[#FF69B4] text-white flex items-center justify-center font-bold">04</div>
+                        <h4 class="font-semibold text-lg">Delivery</h4>
+                    </div>
+                    <p class="text-gray-200 text-sm leading-relaxed">We deliver our services with excellence and provide continuous support to ensure long-term success.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <!-- Our Creative Digital Projects Section -->
+        <section class="mt-20 max-w-7xl mx-auto">
+            <h3 class="text-center text-[#4E3B31] font-semibold text-lg mb-10"> Our Impactful Projects </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Project 1: Education Support -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <img
+                        src="https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/3e6ef8bf-bfc2-455b-8021-d818e62ae01f-scaled-r2xkxionl390jdh2hlboopqkoeisizlf8nqagn69xg.webp"
+                        alt="Students in a classroom participating in an education support program"
+                        class="rounded-lg mb-4 w-full object-cover"
+                    />
+                    <h4 class="font-semibold text-[#4E3B31] mb-2">Education Support</h4>
+                    <p class="text-[#6B7280] text-sm leading-relaxed">Empowering underprivileged children through educational support programs, helping them achieve their full potential.</p>
+                </div>
+                <!-- Project 2: Healthcare Initiatives -->
+                <div class="bg-[#FF69B4] rounded-lg shadow p-6 text-[#4E3B31]">
+                    <img
+                        src="https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/image-1-scaled-r2xhvhorl8mpilamz15ttha5eou1igsjg2m64mba9w.webp"
+                        alt="Children receiving healthcare support at a mobile clinic"
+                        class="rounded-lg mb-4 w-full object-cover"
+                    />
+                    <h4 class="font-semibold mb-2">Healthcare Initiatives</h4>
+                    <p class="text-white text-sm leading-relaxed">Providing essential healthcare services, ensuring that every child has access to medical support and wellness programs.</p>
+                    
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+                <!-- Project 3: Community Development -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <img
+                        src="https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/5711c599-cb5a-42d8-8a8a-f6edef9bf489-scaled-r2xhc2cuci1dkpigemveadr7g0kyfno8rx8x2r46v8.webp"
+                        alt="Community development work with children and families"
+                        class="rounded-lg mb-4 w-full object-cover"
+                    />
+                    <h4 class="font-semibold text-[#4E3B31] mb-2">Community Development</h4>
+                    <p class="text-[#6B7280] text-sm leading-relaxed">Fostering growth and sustainability in underprivileged communities by offering support and building local infrastructure.</p>
+                </div>
+                <!-- Project 4: Nutrition and Food Security -->
+                <div class="bg-[#FF69B4] rounded-lg shadow p-6 text-[#4E3B31]">
+                    <img
+                        src="https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/6fae5018-ba70-4d9b-a3b9-41ed1c015383-scaled-r3m49l1rdt55as3rfug0ekukl21nm0ngcdcfwewedg.webp"
+                        alt="Children receiving meals and nutrition support"
+                        class="rounded-lg mb-4 w-full object-cover"
+                    />
+                    <h4 class="font-semibold text-[#4E3B31] mb-2">Nutrition and Food Security</h4>
+                    <p class="text-white text-sm leading-relaxed">Providing nutritious meals to children in need and ensuring food security for vulnerable families.</p>
+                </div>
+            </div>
+        </section>
+         <!-- Latest Insight Updates Section -->
+
+         <section class="mt-20 max-w-7xl mx-auto bg-[#fffff] p-8 rounded-xl">
+            <div class="text-center mb-12">
+              <h3 class="text-2xl font-bold text-[#4E3B31] uppercase mb-4">🎯 Our 2025 Goals</h3>
+              <p class="text-[#6B7280] text-lg max-w-2xl mx-auto">
+                By the end of 2025, we aim to create measurable impact in the lives of underprivileged children through focused efforts in health, education, and community building.
+              </p>
+            </div>
+          
+            <div class="space-y-8">
+              <!-- Goal 1 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <h4 class="text-[#111827] font-semibold">Support 5,000+ children with hygiene kits</h4>
+                  <span class="text-sm text-[#4E3B31] font-medium">55%</span>
+                </div>
+                <div class="w-full bg-[#e5e7eb] rounded-full h-3">
+                  <div class="bg-[#f90386] h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 55%;"></div>
+                </div>
+              </div>
+          
+              <!-- Goal 2 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <h4 class="text-[#111827] font-semibold">Distribute 1 million nutritious meals to school children</h4>
+                  <span class="text-sm text-[#4E3B31] font-medium">45%</span>
+                </div>
+                <div class="w-full bg-[#e5e7eb] rounded-full h-3">
+                  <div class="bg-[#f90386] h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 45%;"></div>
+                </div>
+              </div>
+          
+              <!-- Goal 3 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <h4 class="text-[#111827] font-semibold">Provide menstrual health awareness to 10,000 adolescent girls</h4>
+                  <span class="text-sm text-[#4E3B31] font-medium">30%</span>
+                </div>
+                <div class="w-full bg-[#e5e7eb] rounded-full h-3">
+                  <div class="bg-[#f90386] h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 30%;"></div>
+                </div>
+              </div>
+          
+              <!-- Goal 4 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <h4 class="text-[#111827] font-semibold">Plant 20,000 trees in school zones</h4>
+                  <span class="text-sm text-[#4E3B31] font-medium">40%</span>
+                </div>
+                <div class="w-full bg-[#e5e7eb] rounded-full h-3">
+                  <div class="bg-[#f90386] h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 40%;"></div>
+                </div>
+              </div>
+          
+              <!-- Goal 5 -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <h4 class="text-[#111827] font-semibold">Organize 100+ skill-building workshops for rural youth</h4>
+                  <span class="text-sm text-[#4E3B31] font-medium">55%</span>
+                </div>
+                <div class="w-full bg-[#e5e7eb] rounded-full h-3">
+                  <div class="bg-[#f90386] h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 55%;"></div>
+                </div>
+            </div>
+          
+            <div class="mt-12 text-center">
+              <p class="text-[#4E3B31] font-medium text-lg">
+                Every small step brings us closer to these milestones. Join us in making them a reality!
+              </p>
+            </div>
+          </section>
+          
+        
+
+        
+        <!-- Hear From Our Clients Section -->
+        <section class="mt-20 max-w-7xl mx-auto px-6 py-16 bg-white rounded-xl shadow-md">
+            <div class="text-center mb-12">
+              <h3 class="text-2xl font-bold text-[#4E3B31] uppercase mb-4">🤝 Behind the Scenes</h3>
+              <p class="text-[#6B7280] text-lg max-w-2xl mx-auto">Meet the passionate field heroes who work tirelessly to turn our vision into reality. Their stories inspire everything we do.</p>
+            </div>
+          
+            <div class="grid gap-20 md:grid-cols-1 lg:grid-cols-2">
+              <!-- Team Member 1 -->
+              <div class="bg-[#fef7fd] p-6 rounded-lg text-center hover:shadow-lg transition">
+                <img src="/HeartKind_Care_Foundation_Main/assest/field operation manager.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-[#FF6F61]">
+                <h4 class="text-lg font-semibold text-[#4E3B31]">Mr. Ankit Singh </h4>
+                <p class="text-sm text-[#6B7280]">Field Operational Manager, Varanasi</p>
+                <p class="mt-3 text-sm text-[#4E3B31]">"Every visit to a village reminds me why this mission matters. We’re not just delivering aid, we’re delivering hope."</p>
+              </div>
+          
+              <!-- Team Member 2 -->
+              <div class="bg-[#fef7fd] p-6 rounded-lg text-center hover:shadow-lg transition">
+                <img src="/HeartKind_Care_Foundation_Main/assest/resource manager.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-[#FF6F61]">
+                <h4 class="text-lg font-semibold text-[#4E3B31]">Mr. Ganesh Singh</h4>
+                <p class="text-sm text-[#6B7280]">Resources Manager, Uttar Pradesh</p>
+                <p class="mt-3 text-sm text-[#4E3B31]">"Even one child’s smile after receiving meals keeps me going. This is more than work—it’s purpose."</p>
+              </div>
+          </div>
+              <!-- Team Member 3 -->
+              <!-- <div class="bg-[#fef7fd] p-6 rounded-lg text-center hover:shadow-lg transition">
+                <img src="team3.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-[#FF6F61]">
+                <h4 class="text-lg font-semibold text-[#4E3B31]">Meena Joshi</h4>
+                <p class="text-sm text-[#6B7280]">Education Program Lead, Rajasthan</p>
+                <p class="mt-3 text-sm text-[#4E3B31]">"Seeing girls attend school regularly after years of struggle is the real reward."</p>
+              </div>
+            </div> -->
+          
+           <div class="mt-12 flex justify-center">
+  <p class="text-[#4E3B31] font-medium text-lg text-center max-w-xl">
+    Their passion fuels our mission. We’re proud to walk this journey with them. ❤️
+  </p>
+</div>
+          </section>
+
+          
+
+        </section> <!-- End of Previous Section -->
+
+        <section class="mt-24 relative rounded-3xl overflow-hidden max-w-7xl mx-auto shadow-xl" aria-label="Call to Action Section">
+  <!-- Background Image -->
+  <img
+    src="/HeartKind_Care_Foundation_Main/assest/poorchildeducate.png"
+    alt="NGO team collaborating in the field"
+    class="w-full h-[22rem] object-cover brightness-[0.6]"
+  />
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/40 to-black/20"></div>
+
+  <!-- Content -->
+  <div class="absolute inset-0 flex flex-col justify-center items-center px-6 text-white text-center z-10">
+    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-xl">
+      Ready to Create Real Impact?
+    </h2>
+    <p class="text-lg md:text-xl max-w-3xl mb-8 drop-shadow-sm leading-relaxed">
+      Whether you're looking to <span class="text-[#FFDAB9] font-semibold">donate</span>, <span class="text-[#FFDAB9] font-semibold">volunteer</span>, or <span class="text-[#FFDAB9] font-semibold">partner</span> with us — your journey starts here.
+      Let’s make a difference, together.
+    </p>
+    <button class="bg-[#FF6F61] hover:bg-[#e4574a] text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform transform hover:scale-105">
+      💖 Get Involved
+    </button>
+  </div>
+</section>
+
+               
+    </main> 
+
+      <div id="footer"></div>
+
+    <script>
+     const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+
+
+      fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+      </script>
+</body>
+
+</html>

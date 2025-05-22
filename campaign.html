@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Campaigns</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 48px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color:rgb(250, 4, 172);
+}
+
+.Contact-link {
+  font-weight: 600;
+  padding: 6px 12px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn.solid {
+  background-color:#f90386;
+  color: white;
+  border: none;
+}
+
+.btn.outline {
+  border: 1px solid ;
+  color:rgb(196, 7, 83);
+  background-color: transparent;
+}
+
+.btn.solid:hover {
+  background-color:#c11c66;
+  color:white;
+}
+
+.btn.outline:hover {
+  background-color:#f1d3eb;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ===========================
+   Responsive (Mobile View)
+   =========================== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-button {
+  display: none;
+  font-size: 24px;
+  color: #000;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+/* Global section styles */
+.our-campaign {
+  background-image: linear-gradient(135deg, #FBB6C4, #FF6F91, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+.our-campaign h2 {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.our-campaign h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background-color: #FF6F61;
+  transition: transform 0.4s ease-in-out;
+}
+
+.our-campaign h2:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+
+  </style>
+</head>
+<body >
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="/HeartKind_Care_Foundation_Main/assest/Adobe Express - file.png" alt="HeartKind Care Foundation" class="logo" />
+    </div>
+
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="home.html">Home ▾</a>
+      <a href="About-Us.html">About Us ▾</a>
+      <a href="what-we-do.html">What We Do ▾</a>
+      <a href="campaign.html">Our Campaign ▾</a>
+      <a href="Gallery.html">Gallery ▾</a>
+      <a href="contact.html" class="Contact-link">Contact Us</a>
+      <a href="Join-Us.html" class="btn outline">Join Us</a>
+      <a href="campaign.html" class="btn solid">Donate</a>
+    </nav>
+  </header>
+  
+  <section class="relative py-20 bg-[#FF69B4] overflow-hidden">
+    <!-- Glowing pink accents -->
+    <div class="absolute top-[-50px] left-[-50px] w-96 h-96 bg-[#FF007F] rounded-full blur-[140px] opacity-30 -z-10"></div>
+    <div class="absolute bottom-[-60px] right-[-60px] w-80 h-80 bg-[#ff1493] rounded-full blur-[120px] opacity-30 -z-10"></div>
+  
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-5xl font-extrabold text-white mb-6 tracking-wide relative inline-block drop-shadow-md">
+        Our <span class="text-[#ffffff]">Campaigns</span>
+        <div class="h-1 w-24 bg-white mt-3 mx-auto rounded-full animate-slide-in"></div>
+      </h2>  
+      <p class="text-lg text-[#FFE4ED] max-w-3xl mx-auto leading-relaxed">
+        Empower lives through your kindness. Explore our vibrant campaigns and make a lasting impact.
+      </p>
+    </div>
+  </section>
+
+      <!-- Search & Filter -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-12 mt-12 ml-10 mr-10">
+        <input id="searchInput" type="text" placeholder="🔍 Search causes..." class="w-full md:w-1/2 px-5 py-3 border border-[#FFB6C1] bg-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FF6F91]" />
+        <div class="flex flex-wrap gap-2 text-sm font-medium">
+          <button class="filter-btn px-4 py-2 rounded-full border border-[#FFB6C1] hover:bg-[#FFB6C1]" data-category="all">All</button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-[#FFB6C1] hover:bg-[#FFB6C1]" data-category="education">Education</button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-[#FFB6C1] hover:bg-[#FFB6C1]" data-category="health">Health</button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-[#FFB6C1] hover:bg-[#FFB6C1]" data-category="children">Children</button>
+          <button class="filter-btn px-4 py-2 rounded-full border border-[#FFB6C1] hover:bg-[#FFB6C1]" data-category="animal">Animal</button>
+        </div>
+      </div>
+      
+      <div class="ml-10 mr-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" id="campaignGrid">
+        <!-- Cards will be injected here -->
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-8 mb-16">
+  <button id="loadMoreBtn" class="px-6 py-3 bg-[#c11c66] text-white rounded-full font-semibold hover:bg-[#f90386] transition duration-300">
+    Show More
+  </button>
+</div>
+    <div id="footer"></div>
+
+  </section>
+  <div id="footer"></div>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+  });
+
+  const campaigns = [
+      { 
+  title: "🐄 Support GauShala", 
+  category: "animal-welfare", 
+  img: "/HeartKind_Care_Foundation_Main/assest/gaushala.jpg", 
+  desc: "Provide food, shelter, and medical care to cows in need. Help us maintain and support local GauShalas.", 
+  target: "₹1000,000", 
+  days: "10", 
+  pricePerPacket: "₹200",
+  unit: "Cow"
+},
+ 
+ { 
+      title: "🎉 Celebrate with Kids", 
+      category: "children", 
+      img: "https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/707ace0b-573b-4453-9d13-a2a5961f062c-r3m48865ifa8j22rd9besx6lp0qkhr9etnf6y0wvd0.webp", 
+      desc: "Celebrate your Birthday & Anniversary with underprivileged children and spread more joy.", 
+      target: "₹60,000", 
+      days: "5", 
+      pricePerPacket: "550" ,
+      unit: "20 children"
+    },
+    { 
+      title: "🛍️ Sponsor Food", 
+      category: "health", 
+      img: "https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/6fae5018-ba70-4d9b-a3b9-41ed1c015383-scaled-r3m49l1rdt55as3rfug0ekukl21nm0ngcdcfwewedg.webp", 
+      desc: "Provide basic food packets to our underprivileged children, needy people and daily wage workers.", 
+      target: "₹80,000", 
+      days: "7", 
+      pricePerPacket: "30",
+      unit: "child"
+    },
+    { 
+      title: "🍽️ Food for Stray Dogs", 
+      category: "animal", 
+      img: "https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/8a69fd7e-9aa2-4757-ae16-1f725b69a0b0-scaled-r2xjafjvz0d4ptauijuyg4igdfr5ny0us7ehfgs72c.webp", 
+      desc: "Sponsor food plates and shelter materials for stray/abandoned dogs in cities.", 
+      target: "₹450,000", 
+      days: "6", 
+      pricePerPacket: "40",
+      unit: "dog"
+    },
+    { 
+      title: "🛍️ Sponsor Grocery", 
+      category: "health", 
+      img: "https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/image-1-scaled-r2xhvhorl8mpilamz15ttha5eou1igsjg2m64mba9w.webp", 
+      desc: "Provide Grocery to our underprivileged families, needy people and daily wage workers.", 
+      target: "₹80,000", 
+      days: "7", 
+      pricePerPacket: "650",
+      unit: "person"
+    },
+    
+    { 
+      title: "🥫 Basic Food Packet Drive", 
+      category: "health", 
+      img: "https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/6fae5018-ba70-4d9b-a3b9-41ed1c015383-scaled-r3m49l1rdt55as3rfug0ekukl21nm0ngcdcfwewedg.webp", 
+      desc: "Support our distribution of basic food kits to the homeless and low-income families.", 
+      target: "₹100,000", 
+      days: "10", 
+      pricePerPacket: "600/",
+      unit: "child"
+    },
+    { 
+      title: "🌱 Donate a Plant, Grow Hope", 
+      category: "environment", 
+      img: "https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/plant-1-qsk1yjba8v6u2emvtlnzydz3m9cvf5y7kr8i4hp6mc.jpg", 
+      desc: "Join our plant donation drive and help build a greener tomorrow.", 
+      target: "₹650,000", 
+      days: "30", 
+      pricePerPacket: "55",
+     unit: "plant"
+    },
+    { 
+      title: "📚 Educate Every Child", 
+      category: "education", 
+      img: "https://heartkindcarefoundation.com/wp-content/uploads/elementor/thumbs/3e6ef8bf-bfc2-455b-8021-d818e62ae01f-scaled-r2xkxionl390jdh2hlboopqkoeisizlf8nqagn69xg.webp", 
+      desc: "Empowering underprivileged children with access to education.", 
+      target: "₹300,000", 
+      days: "100", 
+      pricePerPacket: "40",
+      unit: "child"
+    },
+
+    {
+  title: "💖 Hygiene Kits for Women",
+  category: "women", // Make sure this matches a key in your donatePages object
+  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCSo4xFcRESy16mXZC0iGzUHJv3pKueJEBsw&s", // Replace with a real image if available
+  desc: "Distribute sanitary and hygiene kits to women in underprivileged communities to promote dignity and health.",
+  target: "₹1000,000",
+  days: "10",
+  pricePerPacket: "150",
+  unit: "Kit"
+},
+
+
+    // { 
+    //   title: "🩺 Emergency Relief", 
+    //   category: "health", 
+    //   img: "https://via.placeholder.com/400x200", 
+    //   desc: "Providing emergency medical relief to communities.", 
+    //   target: "₹200,000", 
+    //   days: "15", 
+    //   pricePerPacket: "300/ Person"
+    // }
+   
+  ];
+
+
+  let campaignsToShow = 4;
+  let currentFilteredCampaigns = [...campaigns]; // Always store filtered list here
+
+  const campaignGrid = document.getElementById('campaignGrid');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+  const donatePages = {
+    "children": "CelebrationDonationPage.html",
+    "health": "foodpacketdonation.html",
+    "animal": "StrayDogs.html",
+    "environment": "PlantDonation.html",
+    "education": "EducationDonation.html",
+    "animal-welfare": "gaushalaDonation.html",
+    "women": "womenEmpowerment.html"
+
+  };
+
+  // Render cards
+  function renderCampaigns() {
+    // Clear grid
+    campaignGrid.innerHTML = "";
+
+    // Add limited items
+    const visibleCampaigns = currentFilteredCampaigns.slice(0, campaignsToShow);
+
+    visibleCampaigns.forEach(campaign => {
+      const donatePage = donatePages[campaign.category] || "foodpacketdonation.html";
+      const card = `
+
+        <div class="bg-white p-5 rounded-lg shadow-md">
+          <img src="${campaign.img}" alt="${campaign.title}" class="w-full h-40 object-cover rounded-md">
+          <h3 class="font-bold text-xl mt-4">${campaign.title}</h3>
+          <p class="text-sm mt-2 text-gray-700">${campaign.desc}</p>
+          <div class="mt-4 text-lg font-semibold">Target: ${campaign.target}</div>
+          <div class="text-sm">Time Remaining: ${campaign.days} days</div>
+          <div class="mt-4">
+            <a href="${donatePage}?title=${encodeURIComponent(campaign.title)}&category=${campaign.category}&price=${encodeURIComponent(campaign.pricePerPacket)}">
+              <button class="bg-[#f90386] hover:bg-[#c11c66] text-white px-4 py-2 rounded-full">Donate ₹${campaign.pricePerPacket}</button>
+            </a>
+          </div>
+        </div>`;
+      campaignGrid.innerHTML += card;
+    });
+
+    // Show/hide Load More
+    loadMoreBtn.style.display = (campaignsToShow < currentFilteredCampaigns.length) ? 'block' : 'none';
+  }
+
+  // Filter by category
+  function handleFilter(category) {
+    campaignsToShow = 4;
+
+    if (category === 'all') {
+      currentFilteredCampaigns = [...campaigns];
+    } else {
+      currentFilteredCampaigns = campaigns.filter(c => c.category === category);
+    }
+
+    renderCampaigns();
+  }
+
+  // Setup filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevents default behavior that causes reload
+      handleFilter(btn.dataset.category);
+    });
+  });
+
+  // Load More
+  loadMoreBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Important: Prevent page reload
+    campaignsToShow += 6;
+    renderCampaigns();
+  });
+
+  // Initial load
+  window.addEventListener('DOMContentLoaded', () => {
+    renderCampaigns();
+  });
+
+
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+  
+</body>
+</html>

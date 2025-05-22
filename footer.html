@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Footer - HeartKind Care Foundation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Scroll reveal */
+    /* .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.3s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    } */
+
+    /* Carousel */
+   .carousel {
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+    .carousel-item {
+      min-width: 100%;
+      padding: 1rem;
+    }
+
+    /* Dark mode toggle */
+    #darkToggle {
+      cursor: pointer;
+      background: #fbbf24;
+      color: #4e3b31;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: 0.3rem 0.8rem;
+      user-select: none;
+    }
+
+    /* Accessibility */
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: 2px dashed #fbbf24;
+      outline-offset: 2px;
+    }
+
+    /* Animate wave */
+    .wave {
+      animation: waveMove 8s linear infinite;
+    }
+
+    @keyframes waveMove {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-[#4E3B31] transition-colors duration-500">
+
+  <footer
+    class="relative bg-gradient-to-b from-[#7e0a3e] to-[#5c0230] text-white pt-16 pb-12 px-8 sm:px-16 overflow-hidden">
+
+    <!-- Decorative Wave -->
+    <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180"
+      style="height: 80px; pointer-events:none;">
+      <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+        fill="#fbbf24">
+        <path
+          d="M0 49.98c47.12 5.36 90.7 23.3 138.08 34.05 47.3 10.73 91.38 9.74 136.8-4.2 45.67-14.16 91.13-43.7 136.62-48.83 45.5-5.14 91.08 16.68 136.6 23.42 45.35 6.68 90.66-6.73 136.1-6.48 45.3.25 90.3 15.66 135.46 20.35 45.12 4.64 90.3-3.63 135.3-15.04 44.78-11.28 89.17-25.58 133.6-20.53v54.1H0V49.98z" />
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-12">
+      <!-- About Section -->
+      <div class="md:col-span-2 reveal">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight text-white">
+          HeartKind Care Foundation
+        </h2>
+        <p class="mb-6 text-lg leading-relaxed text-gray-300 max-w-2xl">
+          We empower lives with transparency, care, and trust. Join us in making a lasting impact.
+        </p>
+        <a href="Join-Us.html">
+        <button id="donateBtn"
+          class="bg-amber-400 hover:bg-amber-500 text-[#4E3B31] font-semibold rounded-lg px-6 py-3 mb-8 shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-300"
+          aria-label="Donate to HeartKind Care Foundation">
+          DONATE NOW
+        </button>
+                  </a>
+
+        <p class="text-sm text-gray-400 select-none">&copy; 2025 HeartKind Care Foundation |</p>
+
+        <a href="https://www.linkedin.com/in/muskan-tiwari-12a530221" target="_blank"
+          class="inline-block mt-1 font-bold text-lg text-white hover:text-amber-300 transition duration-500 underline decoration-pink-500 decoration-2 underline-offset-4 animate-pulse">
+          Designed by Muskan Tripathi
+        </a>
+      </div>
+
+
+      <!-- Quick Links -->
+      <nav aria-label="Quick navigation" class="reveal">
+        <h3 class="text-xl font-semibold mb-6 border-b border-amber-400 pb-2 w-max">Quick Links</h3>
+        <ul class="space-y-3 text-sm opacity-90">
+          <li><a href="About-Us.html" class="hover:text-amber-400 transition">About Us</a></li>
+          <li><a href="campaign.html" class="hover:text-amber-400 transition">Campaign</a></li>
+          <li><a href="what-we-do.html" class="hover:text-amber-400 transition">What We Do</a></li>
+          <li><a href="contact.html" class="hover:text-amber-400 transition">Contact</a></li>
+          <li><a href="Join-Us.html" class="hover:text-amber-400 transition">Join us</a></li>
+
+        </ul>
+      </nav>
+
+
+      <!-- Latest News -->
+      <section aria-label="Recent blog posts" class="reveal">
+        <h3 class="text-xl font-semibold mb-6 border-b border-amber-400 pb-2 w-max">Latest News</h3>
+        <ul class="text-sm opacity-90 space-y-3 max-h-[10rem] overflow-y-auto">
+          <li><a href="#" class="hover:text-amber-400 transition">Fundraising drive breaks records – Apr 2025</a></li>
+          <li><a href="#" class="hover:text-amber-400 transition">Healthcare supplies delivered – Mar 2025</a></li>
+          <li><a href="#" class="hover:text-amber-400 transition">Volunteer meet in June 2025</a></li>
+          <li><a href="#" class="hover:text-amber-400 transition">Featured in local news – Feb 2025</a></li>
+        </ul>
+      </section>
+
+      <!-- Testimonials -->
+      <section aria-label="Volunteer testimonials" class="md:col-span-2 reveal">
+      <h3 class="text-xl font-semibold mb-6 border-b border-amber-400 pb-2 w-max">What Our Volunteers Say</h3>
+      <div class="carousel" tabindex="0" aria-roledescription="carousel" aria-label="Volunteer testimonials">
+        <div class="carousel-track" id="testimonialTrack">
+          <blockquote class="carousel-item bg-[#3b0c37] rounded-lg p-6 text-sm italic" aria-live="polite" aria-atomic="true">
+            "Volunteering here changed my life. The community and transparency are incredible." <br><span class="font-bold mt-3 block">– Priya S.</span>
+          </blockquote>
+          <blockquote class="carousel-item bg-[#3b0c37] rounded-lg p-6 text-sm italic" aria-live="polite" aria-atomic="true">
+            "The impact I see makes me proud to be part of HeartKind Care." <br><span class="font-bold mt-3 block">– Rohit K.</span>
+          </blockquote>
+          <blockquote class="carousel-item bg-[#3b0c37] rounded-lg p-6 text-sm italic" aria-live="polite" aria-atomic="true">
+            "Organized, compassionate, and effective — a great place to serve." <br><span class="font-bold mt-3 block">– Anjali M.</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+  </div>
+    <!-- Newsletter & Location -->
+    <div class="max-w-7xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+      <!-- Contact Section -->
+      <div class="max-w-7xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+        <div class="md:col-span-3">
+          <h3 class="text-xl font-semibold mb-5 border-b border-amber-400 pb-2 w-max">Contact Us</h3>
+          <ul class="text-sm space-y-3 opacity-90">
+            <li>
+              📍 <strong>Address:</strong> Jansa, Benipur, Kundariya, Varanasi, Uttar Pradesh – 221307
+            </li>
+            <li>
+              📞 <strong>Phone:</strong> <a href="tel:+919876543210" class="hover:text-amber-400 transition">+91
+                7521050908</a>
+            </li>
+            <li>
+              ✉️ <strong>Email:</strong> <a href="mailto:heartkindcare@gmail.com"
+                class="hover:text-amber-400 transition">heartkindcarengo@gmail.com</a>
+            </li>
+            <li>
+              <!-- Follow Us -->
+              <div>
+                <h4 class="text-xl font-semibold mb-5 border-b border-amber-400 pb-2 w-max">Follow Us</h4>
+                <div class="flex space-x-6">
+                  <!-- Instagram -->
+                  <a href="https://www.instagram.com/heartkind_care_foundation/?hl=en" aria-label="Instagram"
+                    class="icon-hover transition text-2xl" title="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm5.5-2a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 9a3 3 0 100 6 3 3 0 000-6z" />
+                    </svg>
+                  </a>
+
+                  <!-- Facebook -->
+                  <a href="https://www.facebook.com/p/Heartkind-and-Care-Foundation-61554963361503/"
+                    aria-label="Facebook" class="icon-hover transition text-2xl" title="Facebook" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M22 12a10 10 0 10-11.59 9.87v-6.99h-2.57v-2.88h2.57V9.41c0-2.54 1.51-3.95 3.82-3.95 1.11 0 2.27.2 2.27.2v2.5h-1.28c-1.26 0-1.65.78-1.65 1.58v1.9h2.8l-.45 2.88h-2.35v6.99A10 10 0 0022 12z" />
+                    </svg>
+                  </a>
+
+                  <!-- WhatsApp -->
+                  <a href="https://wa.me/919695911431" target="_blank"
+                    class="flex items-center gap-2 hover:underline text-gray-300">
+                    <svg class="w-7 h-7 text-green-500" fill="currentColor" viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.003 2.667c-7.365 0-13.333 5.969-13.333 13.333 0 2.351.615 4.634 1.783 6.653l-1.865 6.814 6.982-1.831a13.283 13.283 0 006.433 1.63h.001c7.365 0 13.333-5.968 13.333-13.333S23.368 2.667 16.003 2.667zm0 24.667a11.37 11.37 0 01-5.792-1.57l-.415-.241-4.148 1.088 1.11-4.044-.27-.417a11.293 11.293 0 01-1.734-6.06c0-6.273 5.102-11.375 11.375-11.375 6.273 0 11.375 5.102 11.375 11.375S22.276 27.334 16.003 27.334zm6.205-8.386c-.34-.17-2.007-.992-2.318-1.105-.311-.113-.537-.17-.764.17-.227.34-.877 1.105-1.076 1.33-.198.226-.396.255-.735.085-.34-.17-1.436-.529-2.736-1.687-1.01-.898-1.688-2.007-1.884-2.347-.198-.34-.021-.524.149-.694.152-.152.34-.396.51-.595.17-.198.227-.34.34-.567.113-.227.057-.425-.028-.595-.085-.17-.764-1.838-1.046-2.52-.274-.658-.552-.567-.764-.567-.198-.009-.425-.011-.652-.011s-.595.085-.907.425c-.311.34-1.19 1.163-1.19 2.837s1.218 3.29 1.386 3.518c.17.227 2.394 3.653 5.806 5.12.812.351 1.445.561 1.938.717.814.26 1.552.223 2.137.136.652-.097 2.007-.82 2.29-1.613.283-.793.283-1.475.198-1.613-.085-.136-.311-.226-.65-.396z" />
+                    </svg>
+                    Chat with us on WhatsApp
+                  </a>
+
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Newsletter Signup -->
+      <div>
+        <h3 class="text-xl font-semibold mb-5 border-b border-amber-400 pb-2 w-max">Newsletter</h3>
+        <p class="mb-3 opacity-90 text-sm">Choose your newsletter frequency:</p>
+        <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');" class="space-y-3 max-w-md">
+          <label for="email" class="sr-only">Email address</label>
+          <input type="email" id="email" required placeholder="Your email address" aria-label="Email address"
+            class="w-full rounded-md px-3 py-2 text-black" />
+          <div class="flex space-x-4 items-center text-sm">
+            <label><input type="radio" name="freq" value="weekly" checked /> Weekly</label>
+            <label><input type="radio" name="freq" value="monthly" /> Monthly</label>
+          </div>
+          <button type="submit"
+            class="bg-amber-400 hover:bg-amber-500 text-[#4E3B31] font-bold rounded-md px-6 py-2 transition focus:outline-none focus:ring-4 focus:ring-amber-300">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Map Location -->
+      <div>
+        <h3 class="text-xl font-semibold mb-5 border-b border-amber-400 pb-2 w-max">Our Location</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.113598626286!2d82.99396841504882!3d25.329101783796924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e32bc477758a3%3A0x610e8c56fbb4527a!2sVaranasi%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1675253709456!5m2!1sen!2sin"
+          width="100%" height="220" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Google Maps location of HeartKind Care Foundation in Varanasi"></iframe>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        if (elementTop < windowHeight - 50) {
+          reveals[i].classList.add("active");
+        }
+      }
+    });
+
+    // Carousel Auto Slide (optional)
+    const track = document.getElementById('testimonialTrack');
+  let currentIndex = 0;
+  function carouselNext() {
+    currentIndex++;
+    if(currentIndex >= track.children.length) currentIndex = 0;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+  setInterval(carouselNext, 4000); // auto scroll every 6 seconds
+
+
+  </script>
+
+</body>
+
+</html>

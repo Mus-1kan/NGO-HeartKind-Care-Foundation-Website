@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donation Summary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 text-gray-900 min-h-screen flex items-center justify-center p-6">
+
+  <section class="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8 space-y-8 border border-pink-100 relative">
+    <h2 class="text-3xl font-extrabold text-center text-pink-600 tracking-wide">💝 Total Donation Summary</h2>
+
+    <div id="cart-items" class="space-y-5 text-base"></div>
+
+    <div class="border-t pt-4 text-center space-y-2">
+      <p id="total-amount" class="text-xl font-semibold text-gray-800"></p>
+      <p id="tax-benefit" class="text-md text-green-600 font-medium"></p>
+      <p id="final-total" class="text-2xl font-bold text-pink-700"></p>
+    </div>
+
+    <div class="text-center">
+      <button onclick="showForm()" class="mt-4 bg-green-500 text-white text-lg font-semibold py-3 px-8 rounded-xl shadow-md hover:bg-green-600 transition-all duration-300">
+        💳 Donate Now
+      </button>
+    </div>
+  </section>
+
+  <!-- Donor Form Popup -->
+<div id="donor-form-modal" class="fixed inset-0 hidden bg-black bg-opacity-40 flex items-center justify-center z-50 p-4 overflow-y-auto">
+  <div class="bg-white p-6 rounded-2xl w-full max-w-lg shadow-lg space-y-4 border border-pink-200 max-h-[90vh] overflow-y-auto">
+    <h3 class="text-2xl font-bold text-pink-600 text-center">Donor Information</h3>
+
+    <input id="donor-name" type="text" placeholder="Full Name" class="w-full px-4 py-2 border rounded-lg" required />
+    <input id="donor-email" type="email" placeholder="Email" class="w-full px-4 py-2 border rounded-lg" required />
+    <input id="donor-contact" type="tel" placeholder="Contact Number" class="w-full px-4 py-2 border rounded-lg" required />
+    <input id="product-name" type="text" placeholder="Product Name" class="w-full px-4 py-2 border rounded-lg" required />
+    <input id="recipient-name" type="text" placeholder="Recipient Name" class="w-full px-4 py-2 border rounded-lg" required />
+    
+    <textarea id="donor-message" placeholder="Message to be Printed" class="w-full px-4 py-2 border rounded-lg" rows="4"></textarea>
+
+    <div class="flex justify-between items-center">
+      <label for="donation-amount" class="font-semibold text-pink-600">Donation Amount:</label>
+      <input id="donation-amount" type="number" placeholder="Amount" class="w-1/2 px-4 py-2 border rounded-lg" readonly />
+    </div>
+
+    <input id="donor-photo" type="file" accept="image/*" class="w-full px-4 py-2 border rounded-lg" />
+
+    <div id="video-wish" class="hidden mt-4">
+    <textarea id="donor-Wishes" placeholder="Wishes to be Printed" class="w-full px-4 py-2 border rounded-lg" rows="4"></textarea>
+
+      <p class="text-pink-500 font-semibold">✨ As a token of our heartfelt gratitude, you'll receive an exclusive thank-you video from the children whose lives you're helping transform. Thank you for being a hero of hope! 💖 </p>
+      <p class="text-gray-500 font-light">  💡 <strong>Note:</strong> The exclusive video Wishes message is available only for donations above <strong>₹600</strong>. </p>
+
+      
+    </div>
+
+    <div class="flex justify-between mt-4">
+      <button onclick="hideForm()" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500">Cancel</button>
+      <button onclick="payNow()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Proceed to Pay</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+  // const BASE_URL = window.location.hostname === "localhost" 
+  //   ? "http://localhost:5000" 
+  //   : "http://localhost:5000"; // fallback or prod URL here
+
+  const BASE_URL = "http://localhost:5000";
+
+  function calculateTaxBenefit(amount) {
+    if (amount >= 5000) return 10;
+    if (amount >= 2000) return 5;
+    if (amount >= 1000) return 2;
+    return 0;
+  }
+
+  function updateAmount() {
+    const donationAmount = parseFloat(document.getElementById('donation-amount').value);
+    const videoSection = document.getElementById('video-wish');
+    videoSection.classList.toggle('hidden', donationAmount < 600);
+  }
+
+  function showForm() {
+    const totalAmount = document.getElementById('final-total').textContent.replace('Final Payable Amount: ₹', '');
+    document.getElementById('donation-amount').value = totalAmount;
+    updateAmount();
+    document.getElementById('donor-form-modal').classList.remove('hidden');
+  }
+
+  function hideForm() {
+    document.getElementById('donor-form-modal').classList.add('hidden');
+  }
+
+  async function payNow() {
+    const name = document.getElementById('donor-name').value.trim();
+    const email = document.getElementById('donor-email').value.trim();
+    const contact = document.getElementById('donor-contact').value.trim();
+    const productName = document.getElementById('product-name').value.trim();
+    const recipientName = document.getElementById('recipient-name').value.trim();
+    const amount = parseFloat(document.getElementById('donation-amount').value) * 100;
+    const donorMessage = document.getElementById('donor-message').value.trim();
+
+    if (!name || !email || !contact || !productName || !recipientName || !amount) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+
+    // Get video wishes only if donation ≥ 600 INR
+    let videoWishes = "";
+    if (amount / 100 >= 600) {
+      videoWishes = document.getElementById('donor-Wishes').value.trim();
+    }
+
+    // Get donor photo as base64 if provided
+const getBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file); // This returns the FULL string like data:image/jpeg;base64,...
+    reader.onload = () => resolve(reader.result); // No need to add "data:image..." later
+    reader.onerror = (error) => reject(error);
+  });
+};
+
+
+// Get donor photo as base64 if provided
+const photoInput = document.getElementById('donor-photo');
+let donorPhotoBase64 = "";
+
+if (photoInput.files.length > 0) {
+  donorPhotoBase64 = await getBase64(photoInput.files[0]); // don't add anything to this!
+}
+
+
+    const options = {
+      key: "rzp_test_giTnV6cUIrX2YX",
+      amount: amount,
+      currency: "INR",
+      name: "Heartkind Care Foundation",
+      description: `Donation for ${productName}`,
+      image: "https://heartkindcarefoundation.com/assets/logo.png",
+      handler: function (response) {
+        // Build donation data object
+        const donationData = {
+          name,
+          email,
+          phoneNumber: contact,
+          productName,
+          recipientName,
+          amount: amount / 100,
+          message: donorMessage,
+          videoWishes: videoWishes || "",
+      donorPhotoBase64: donorPhotoBase64 || "",
+          razorpay_order_id: response.razorpay_order_id,
+          paymentId: response.razorpay_payment_id,  // <-- rename here
+          razorpay_signature: response.razorpay_signature,
+        };
+
+        if (videoWishes) {
+          donationData.videoWishes = videoWishes;
+        }
+
+        if (donorPhotoBase64) {
+          donationData.donorPhotoBase64 = donorPhotoBase64;
+        }
+
+        // Send donation data to your server
+        fetch(`${BASE_URL}/submit-form`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(donationData)
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            console.log("✅ Donation saved and email sent:", data);
+            showConfirmation(name, amount / 100, productName, recipientName);
+            localStorage.removeItem("cart");
+          } else {
+            console.error("❌ Error saving donation:", data.message);
+            alert("Payment was successful, but we couldn't record your donation. Please contact support.");
+          }
+        })
+        .catch(error => {
+          console.error("❌ Error saving donation:", error);
+          alert("Payment was successful, but we couldn't record your donation. Please contact support.");
+        });
+      },
+      prefill: {
+        name,
+        email,
+        contact
+      },
+      theme: {
+        color: "#f472b6"
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+  }
+
+  function showConfirmation(name, amount, productName, recipientName) {
+    hideForm();
+    const section = document.createElement('section');
+    section.className = "fixed inset-0 bg-pink-50 flex items-center justify-center z-50";
+    section.innerHTML = `
+      <div class="bg-white p-8 rounded-2xl shadow-xl border border-pink-200 text-center max-w-lg w-full space-y-6">
+        <h2 class="text-3xl font-bold text-pink-600">🎉 Thank You, ${name}!</h2>
+        <p class="text-lg text-gray-700">Your donation of <span class="font-semibold text-green-600">₹${amount}</span> for <span class="font-semibold text-pink-700">${productName}</span> has been successfully received.</p>
+        <p class="text-md text-gray-600">Your gift will bring a smile to <span class="font-semibold">${recipientName}</span>’s face 💖</p>
+        <p class="text-md text-gray-500">We truly appreciate your kindness and support.</p>
+        <button onclick="location.reload()" class="mt-4 bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600 transition-all">Back to Home</button>
+      </div>
+    `;
+    document.body.appendChild(section);
+  }
+  
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const cartItemsContainer = document.getElementById('cart-items');
+    let totalAmount = 0;
+
+    if (Object.keys(cart).length === 0) {
+      cartItemsContainer.innerHTML = "<p class='text-center text-gray-500'>Your cart is empty.</p>";
+      return;
+    }
+
+  Object.keys(cart).forEach(productId => {
+  const product = cart[productId];
+  if (product && product.name && product.price && product.quantity) {
+    totalAmount += product.price * product.quantity;
+
+    const productElement = document.createElement('div');
+    productElement.className = 'rounded-xl p-4 bg-pink-100 border border-pink-200 shadow-sm';
+    productElement.innerHTML = `
+      <h3 class="text-lg font-semibold text-pink-800">🎁 ${product.name}</h3>
+      <p><span class="font-medium">Price:</span> ₹${product.price}</p>
+      <p><span class="font-medium">Quantity:</span> ${product.quantity}</p>
+      <p><span class="font-medium">Subtotal:</span> ₹${product.price * product.quantity}</p>
+    `;
+    cartItemsContainer.appendChild(productElement);
+  }
+});
+
+
+    const taxPercent = calculateTaxBenefit(totalAmount);
+    const taxAmount = Math.floor(totalAmount * taxPercent / 100);
+    const finalTotal = totalAmount + taxAmount;
+
+    document.getElementById('total-amount').textContent = `Donation Amount: ₹${totalAmount}`;
+    document.getElementById('tax-benefit').textContent = ` Tax Benefit (${taxPercent}%): ₹${taxAmount}`;
+    document.getElementById('final-total').textContent = `Final Payable Amount: ₹${finalTotal}`;
+  });
+</script>
+
+</body>
+</html>
+
+  </script>

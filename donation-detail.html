@@ -1,0 +1,71 @@
+<!-- donation-summary.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Summary</title>
+  <link rel="stylesheet" href="path-to-your-css.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-2xl font-semibold mb-6">Donation Summary</h1>
+
+    <div id="donationList">
+      <!-- Donation items will be displayed here -->
+    </div>
+
+    <div class="mt-4">
+      <h2 class="text-lg font-semibold">Total Amount: ₹<span id="totalAmount">0</span></h2>
+    </div>
+
+    <div class="mt-6">
+      <button class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="finalizeDonation()">Donate Now</button>
+    </div>
+  </div>
+
+  <script>
+    // Fetch cart data from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Display the donation items
+    const donationList = document.getElementById('donationList');
+    let totalAmount = 0;
+
+    cart.forEach((item, index) => {
+      const donationItem = document.createElement('div');
+      donationItem.classList.add('donation-item');
+      donationItem.innerHTML = `
+        <div class="flex justify-between mb-4">
+          <span><strong>Donation ${index + 1}:</strong> ${item.name}</span>
+          <span>₹${item.amount}</span>
+        </div>
+        <div>
+          <strong>Message:</strong> ${item.message}
+        </div>
+        <div>
+          <strong>Date:</strong> ${item.date}
+        </div>
+      `;
+      donationList.appendChild(donationItem);
+
+      // Add the amount to the total
+      totalAmount += item.amount;
+    });
+
+    // Display the total amount
+    document.getElementById('totalAmount').textContent = totalAmount;
+
+    // Finalize the donation (clear the cart and redirect)
+    function finalizeDonation() {
+      // You can add more steps here, like sending data to a server
+
+      // Clear the cart after donation
+      localStorage.removeItem('cart');
+
+      // Redirect to a Thank You page or a confirmation page
+      window.location.href = 'thank-you.html';
+    }
+  </script>
+</body>
+</html>
