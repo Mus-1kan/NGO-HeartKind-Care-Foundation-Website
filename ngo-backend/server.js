@@ -15,7 +15,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // 2. MongoDB Connection
-mongoose.connect('mongodb+srv://ngo_admin:MLPQAZ098@ngo-cluster.3gf92df.mongodb.net/?retryWrites=true&w=majority&appName=ngo-cluster', {
+mongoose.connect('mongodb+srv://MONGO_URI', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
